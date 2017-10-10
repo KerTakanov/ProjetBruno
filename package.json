@@ -1,8 +1,7 @@
 {
-  "name": "ionicApp",
+  "name": "Valsusa",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "PIZZO Bruno",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -34,5 +33,5 @@
     "@ionic/app-scripts": "3.0.0",
     "typescript": "2.3.4"
   },
-  "description": "An Ionic project"
+  "description": "Application touristique"
 }

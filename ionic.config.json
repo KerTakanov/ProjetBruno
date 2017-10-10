@@ -1,5 +1,6 @@
 {
-  "name": "ionicApp",
+  "name": "Valsusa",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {}
 }

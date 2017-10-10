@@ -10,6 +10,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {SearchbarFilterPipe} from "../pipes/searchbar-filter/searchbar-filter";
+import {DataPipe} from "../pipes/data/data";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SearchbarFilterPipe,
+    DataPipe
   ],
   imports: [
     BrowserModule,
