@@ -1,17 +1,26 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {ListModel} from "../../models/list";
+import {ListItemModel} from "../../models/listitem";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  raw_data: any;
   search: string;
   path: string;
+  public listmodel: ListModel;
 
   constructor(public navCtrl: NavController) {
-    this.path = ":/";
+    this.listmodel = new ListModel([
+      new ListItemModel("France", "assets/data/images/country_flags/fr.png"),
+      new ListItemModel("Italie", "assets/data/images/country_flags/it.png"),
+      new ListItemModel("Angleterre", "assets/data/images/country_flags/gb.png"),
+      new ListItemModel("Allemagne", "assets/data/images/country_flags/der.png"),
+      new ListItemModel("Suisse", "assets/data/images/country_flags/ch.png")
+    ]);
+    /*this.path = ":/";
     this.raw_data = { ":": {
       abbr:":",
       img_path: null,
@@ -64,7 +73,7 @@ export class HomePage {
           },
           img_path: "../../assets/images/country_flags/it.png"
         }
-      }}};
+      }}};*/
   }
 
   mvPath(path: string) {

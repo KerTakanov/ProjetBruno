@@ -12,6 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {SearchbarFilterPipe} from "../pipes/searchbar-filter/searchbar-filter";
 import {DataPipe} from "../pipes/data/data";
+import {ListComponent} from "../components/list/list";
+import {ListItemComponent} from "../components/list-item/list-item";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {DataPipe} from "../pipes/data/data";
     HomePage,
     TabsPage,
     SearchbarFilterPipe,
-    DataPipe
+    DataPipe,
+    ListComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import {DataPipe} from "../pipes/data/data";
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ListComponent,
+    ListItemComponent
   ],
   providers: [
     StatusBar,
