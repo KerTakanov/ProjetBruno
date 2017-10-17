@@ -7,13 +7,6 @@
 <ion-content>
   <img class='headerImg' src="../../assets/images/header.jpg">
   <ion-searchbar [(ngModel)]="search" [showCancelButton]="shouldShowCancel"></ion-searchbar>
-  <!--<ion-list>
-    <ion-item *ngFor="let k of raw_data | data: path | searchbarFilter: search">
-      <div class="item">
-        <span class="item-name">{{k}}</span><button (click)="mvPath(k)"> > </button>
-      </div>
-    </ion-item>
-  </ion-list>-->
-  <list-val [listitems]="listmodel">
-  </list-val>
+
+  <list-val (popclick)="popModel()" (click)="onlistclick($event)" [models]="hmodels" [search]="search"></list-val>
 </ion-content>

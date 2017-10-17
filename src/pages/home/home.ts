@@ -10,73 +10,43 @@ import {ListItemModel} from "../../models/listitem";
 export class HomePage {
   search: string;
   path: string;
+
+  public hmodels: ListModel[] = [];
   public listmodel: ListModel;
+  public regions: ListModel;
 
   constructor(public navCtrl: NavController) {
     this.listmodel = new ListModel([
-      new ListItemModel("France", "assets/data/images/country_flags/fr.png"),
-      new ListItemModel("Italie", "assets/data/images/country_flags/it.png"),
-      new ListItemModel("Angleterre", "assets/data/images/country_flags/gb.png"),
-      new ListItemModel("Allemagne", "assets/data/images/country_flags/der.png"),
-      new ListItemModel("Suisse", "assets/data/images/country_flags/ch.png")
+      new ListItemModel("France", "assets/images/country_flags/fr.png"),
+      new ListItemModel("Italie", "assets/images/country_flags/it.png"),
+      new ListItemModel("Angleterre", "assets/images/country_flags/gb.png"),
+      new ListItemModel("Allemagne", "assets/images/country_flags/de.png"),
+      new ListItemModel("Suisse", "assets/images/country_flags/ch.png")
     ]);
-    /*this.path = ":/";
-    this.raw_data = { ":": {
-      abbr:":",
-      img_path: null,
-      subitems: {
-        "France": {
-          abbr: "fr",
-          subitems: {
-            "Auvergne-Rhones-Alpes": {
-              abbr: "fr-auvh",
-              subitems: {
-                "Savoie": {
-                  abbr: "fr-sve",
-                  subitems: { },
-                  img_path: null
-                }
-              },
-              img_path: null
-            },
-            "Calvados": {
-              abbr: "fr-calva",
-              subitems: {},
-              img_path: null
-            },
-            "Ile-de-France": {
-              abbr: "fr-idf",
-              subitems: {},
-              img_path: null
-            }
-          },
-          img_path: "../../assets/images/country_flags/fr.png"
-        },
-        "Italie": {
-          abbr: "it",
-          subitems: {
-            "Lombardie": {
-              abbr: "it-lbi",
-              subitems: {},
-              img_path: null
-            },
-            "Lazio": {
-              abbr: "it-laz",
-              subitems: {},
-              img_path: null
-            },
-            "Piedmont": {
-              abbr: "it-pied",
-              subitems: {},
-              img_path: null
-            }
-          },
-          img_path: "../../assets/images/country_flags/it.png"
-        }
-      }}};*/
+
+    this.regions = new ListModel([
+      new ListItemModel("Savoie", "assets/images/country_flags/fr.png"),
+      new ListItemModel("Haute-Savoie", "assets/images/country_flags/it.png"),
+      new ListItemModel("Isère", "assets/images/country_flags/gb.png"),
+      new ListItemModel("Calvados", "assets/images/country_flags/de.png"),
+      new ListItemModel("Ile-de-France", "assets/images/country_flags/ch.png")
+    ]);
+
+    this.hmodels.push(this.listmodel);
   }
 
-  mvPath(path: string) {
-    this.path += "/" + path;
+  onlistclick(event) {
+    this.search = "";
+    if (event.value != null && event.value.label == "France") {
+      this.hmodels.push(this.regions);
+    }
+    else if (event.value != null) {
+      this.hmodels.push(this.listmodel);
+    }
+  }
+
+  popModel() {
+    this.search = "";
+    this.hmodels.pop();
   }
 }

@@ -1,3 +1,10 @@
-<ion-list>
-  <list-item [model]="li" *ngFor="let li of listitems"></list-item>
-</ion-list>
+<ion-card padding>
+  <button *ngIf="models.length > 1" (click)="popModel()">
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
+  <ion-list>
+    <button (click)="list_clicked(li)" ion-item *ngFor="let li of models[models.length-1].items | searchbarFilter: search">
+        <list-item [model]="li" ></list-item>
+    </button>
+  </ion-list>
+</ion-card>
