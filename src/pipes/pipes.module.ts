@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { SearchbarFilterPipe } from './searchbar-filter/searchbar-filter';
 import { DataPipe } from './data/data';
+import { SortlistPipe } from './sortlist/sortlist';
 @NgModule({
 	declarations: [SearchbarFilterPipe,
-    DataPipe],
+    DataPipe,
+    SortlistPipe],
 	imports: [],
 	exports: [SearchbarFilterPipe,
-    DataPipe]
+    DataPipe,
+    SortlistPipe]
 })
 export class PipesModule {}

@@ -16,6 +16,9 @@ import {ListComponent} from "../components/list/list";
 import {ListItemComponent} from "../components/list-item/list-item";
 import {RestapiServiceProvider} from "../providers/restapi-service/restapi-service";
 import {HttpModule} from "@angular/http";
+import {SortlistPipe} from "../pipes/sortlist/sortlist";
+import { CorpProvider } from '../providers/corp/corp';
+import {CorpPageComponent} from "../components/corp-page/corp-page";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import {HttpModule} from "@angular/http";
     TabsPage,
     SearchbarFilterPipe,
     DataPipe,
+    SortlistPipe,
     ListComponent,
+    CorpPageComponent,
     ListItemComponent
   ],
   imports: [
@@ -42,13 +47,17 @@ import {HttpModule} from "@angular/http";
     HomePage,
     TabsPage,
     ListComponent,
+    CorpPageComponent,
     ListItemComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     RestapiServiceProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SortlistPipe,
+    CorpProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CorpProvider
   ]
 })
 export class AppModule {}

@@ -3,7 +3,7 @@
     <ion-icon name="arrow-back"></ion-icon>
   </button>
   <ion-list *ngIf="models[current_cat].items.length > 0">
-    <button (click)="list_clicked(li)" ion-item *ngFor="let li of models[current_cat].items | searchbarFilter: search">
+    <button (click)="list_clicked(li)" ion-item *ngFor="let li of models[current_cat].items | searchbarFilter: search | sortlist">
         <list-item [model]="li" ></list-item>
     </button>
   </ion-list>

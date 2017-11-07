@@ -7,11 +7,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+  <ion-item *ngIf='corps.hasOwnProperty("5a01bc795866c804243f17f6")'>
+  <corp-page [corp]="corps['5a01bc795866c804243f17f6']">
+
+  </corp-page>
+  </ion-item>
 </ion-content>
