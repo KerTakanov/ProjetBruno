@@ -8,5 +8,5 @@
   <img class='headerImg' src="../../assets/images/header.jpg">
   <ion-searchbar [(ngModel)]="search" [showCancelButton]="shouldShowCancel"></ion-searchbar>
 
-  <list-val (popclick)="popModel()" (click)="onlistclick($event)" [models]="hmodels" [search]="search"></list-val>
+  <list-val [current_cat]="current_cat" [models]="listmodel" [search]="search"></list-val>
 </ion-content>

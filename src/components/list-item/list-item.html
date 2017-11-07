@@ -1,5 +1,5 @@
 <span>
-  <img src="{{model.imgpath}}">
+  <img *ngIf="model.imgpath != null" src="{{model.imgpath}}">
   <span class="item-name">{{model.label}}</span>
 </span>
 <ion-icon name="arrow-forward"></ion-icon>

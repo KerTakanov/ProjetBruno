@@ -1,5 +1,5 @@
 export class ListItemModel {
-  public constructor(public label: string, public imgpath: string) {
+  public constructor(public oid: string, public label: string, public imgpath: string, public sublist: string[]) {
 
   }
 }

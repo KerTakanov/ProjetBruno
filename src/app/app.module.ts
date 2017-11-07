@@ -14,6 +14,8 @@ import {SearchbarFilterPipe} from "../pipes/searchbar-filter/searchbar-filter";
 import {DataPipe} from "../pipes/data/data";
 import {ListComponent} from "../components/list/list";
 import {ListItemComponent} from "../components/list-item/list-item";
+import {RestapiServiceProvider} from "../providers/restapi-service/restapi-service";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import {ListItemComponent} from "../components/list-item/list-item";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,6 +47,7 @@ import {ListItemComponent} from "../components/list-item/list-item";
   providers: [
     StatusBar,
     SplashScreen,
+    RestapiServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
