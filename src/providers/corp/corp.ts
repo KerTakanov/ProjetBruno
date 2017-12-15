@@ -24,10 +24,11 @@ export class CorpProvider {
       .then(data => {
         let _data: any = data;
         _data = JSON.parse(_data);
+        let address = JSON.parse(_data.address);
 
         corplist[id] = new Corporation(
           _data.name,
-          _data.address,
+          address.address,
           _data.phone,
           _data.website,
           _data.mail,

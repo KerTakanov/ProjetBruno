@@ -2,9 +2,17 @@
   <button *ngIf="cat_stack.length > 1" (click)="popModel()">
     <ion-icon name="arrow-back"></ion-icon>
   </button>
-  <ion-list *ngIf="models[current_cat].items.length > 0">
-    <button (click)="list_clicked(li)" ion-item *ngFor="let li of models[current_cat].items | searchbarFilter: search | sortlist">
-        <list-item [model]="li" ></list-item>
-    </button>
+  <ion-list>
+    <ion-list *ngIf="model_stack.length > 0">
+      <button (click)="corp_clicked(corp)" ion-item *ngFor="let corp of corps | corpMapToIterable | sortlist">
+        <span>{{corp.name}}</span>
+      </button>
+    </ion-list>
+
+    <div *ngIf="models[current_cat] || []">
+      <button (click)="list_clicked(li)" ion-item *ngFor="let li of models[current_cat].items | searchbarFilter: search | sortlist">
+          <list-item [model]="li" ></list-item>
+      </button>
+    </div>
   </ion-list>
 </ion-card>

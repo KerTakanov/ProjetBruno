@@ -4,6 +4,8 @@ import {ListModel} from "../../models/list";
 import {ListItemModel} from "../../models/listitem";
 import {RestapiServiceProvider} from "../../providers/restapi-service/restapi-service";
 import {SortlistPipe} from "../../pipes/sortlist/sortlist";
+import {CorpProvider} from "../../providers/corp/corp";
+import {Corporation} from "../../models/corporation";
 
 @Component({
   selector: 'page-home',
@@ -13,12 +15,15 @@ export class HomePage {
   search: string;
   path: string;
 
-  public listmodel: { [id: string] : ListModel } = {"root": new ListModel([])};
+  public listmodel: { [id: string] : ListModel } = {"root": new ListModel([], {})};
   public categories: { [id: string] : ListItemModel} = {};
   public translations: { [id: string] : string} = {};
   public current_cat: string = "root";
 
-  constructor(public navCtrl: NavController, public restapiService: RestapiServiceProvider, public sortlist: SortlistPipe) {
+  constructor(public navCtrl: NavController,
+              public restapiService: RestapiServiceProvider,
+              public sortlist: SortlistPipe,
+              public corpProvider: CorpProvider) {
     this.getCategory("root");
     this.getCategoryList("root");
   }
@@ -63,10 +68,10 @@ export class HomePage {
           subcat.push(item['$oid']);
         }
 
-        let corps = [];
+        let corps: {[id: string] : Corporation} = {};
         if (_data.corps != null) {
           for (let item of _data.corps) {
-            corps.push(item['$oid']);
+            this.corpProvider.getCorp(corps, item['$oid']);
           }
         }
 
@@ -76,7 +81,7 @@ export class HomePage {
 
         this.categories[id] = new ListItemModel(id, name, _data.image, subcat, corps);
         if (this.listmodel[listmodel] == null)
-          this.listmodel[listmodel] = new ListModel([]);
+          this.listmodel[listmodel] = new ListModel([], corps);
         this.listmodel[listmodel].items.push(this.categories[id]);
 
         if (name != null)

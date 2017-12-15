@@ -18,7 +18,8 @@ import {RestapiServiceProvider} from "../providers/restapi-service/restapi-servi
 import {HttpModule} from "@angular/http";
 import {SortlistPipe} from "../pipes/sortlist/sortlist";
 import { CorpProvider } from '../providers/corp/corp';
-import {CorpPageComponent} from "../components/corp-page/corp-page";
+import {CorpMapToIterablePipe} from "../pipes/corp-map-to-iterable/corp-map-to-iterable";
+import {CorpPage} from "../pages/corp/corp";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {CorpPageComponent} from "../components/corp-page/corp-page";
     DataPipe,
     SortlistPipe,
     ListComponent,
-    CorpPageComponent,
+    CorpMapToIterablePipe,
+    CorpPage,
     ListItemComponent
   ],
   imports: [
@@ -47,7 +49,7 @@ import {CorpPageComponent} from "../components/corp-page/corp-page";
     HomePage,
     TabsPage,
     ListComponent,
-    CorpPageComponent,
+    CorpPage,
     ListItemComponent
   ],
   providers: [
@@ -55,6 +57,7 @@ import {CorpPageComponent} from "../components/corp-page/corp-page";
     SplashScreen,
     RestapiServiceProvider,
     SortlistPipe,
+    CorpMapToIterablePipe,
     CorpProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CorpProvider

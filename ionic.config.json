@@ -2,9 +2,13 @@
   "name": "Valsusa",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {},
-  "proxies": [{
-    "path": "/api",
-    "proxyUrl": "http://localhost:5003"
-  }]
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:5003"
+    }
+  ]
 }

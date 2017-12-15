@@ -5,7 +5,7 @@ export class ListItemModel {
                      public label: string,
                      public imgpath: string,
                      public sublist: string[],
-                     public corps: string[]) {
+                     public corps: {[id: string] : Corporation}) {
 
   }
 }

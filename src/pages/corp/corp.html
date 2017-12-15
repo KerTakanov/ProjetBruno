@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{corp.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDk8GxVux-X7zG0KH6K44KmO5UCihkHswA&sensor=true"></script>
+  Adresse: {{corp.address}}<br>
+  {{corp.phone}} - {{corp.mail}}<br>
+  {{corp.website}}<br>
+  <div #map id="map"></div>
+</ion-content>

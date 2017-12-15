@@ -10,9 +10,6 @@ import {ListItemModel} from "../../models/listitem";
   name: 'sortlist',
 })
 export class SortlistPipe implements PipeTransform {
-  /**
-   * Takes a value and makes it lowercase.
-   */
   transform(items: ListItemModel[]) {
     items.sort((a, b) => {
       if(a.label < b.label) return -1;
