@@ -42,14 +42,14 @@ desc.key = "desc_best_corp"
 pack = Pack(pack_type="Exclusive")
 
 corp = Corporation()
-corp.name = "Best Company Ever"
+corp.name = "Restaurant le 59"
 corp.account = account
 corp.address = address
 corp.phone = "+885142536"
 corp.mail = "hello.worl@gmail.com"
 corp.description = desc
-corp.latitude = 90.0
-corp.longitude = 8.8
+corp.latitude = 45.690095
+corp.longitude = 5.913445
 corp.views = 124945
 corp.pack = pack
 corp.coin = 250

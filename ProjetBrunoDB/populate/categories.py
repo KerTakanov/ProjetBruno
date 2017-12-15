@@ -48,7 +48,7 @@ restaut = Translation(key="restaurants", names={"fr-FR": "Restaurants"})
 restausav.name = restaut
 
 from models.corporation import Corporation
-bestcorp = Corporation.objects(name="Best Company Ever")[0]
+bestcorp = Corporation.objects(name="Restaurant le 59")[0]
 restausav.corps = [bestcorp]
 
 coiffsav.name = Translation(key="coiffeur", names={"fr-FR": "Coiffeurs"})
